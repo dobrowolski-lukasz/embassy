@@ -13,7 +13,7 @@ use embassy_sync::signal::Signal;
 use embassy_sync::zerocopy_channel;
 use embassy_usb::class::uac1;
 use embassy_usb::class::uac1::speaker::{self, Speaker};
-use embassy_usb::driver::EndpointError;
+use embassy_usb::EndpointError;
 use heapless::Vec;
 use micromath::F32Ext;
 use static_cell::StaticCell;

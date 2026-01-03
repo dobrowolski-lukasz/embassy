@@ -6,8 +6,7 @@ use core::mem::MaybeUninit;
 
 use crate::control::{InResponse, Recipient, Request, RequestType};
 use crate::descriptor::capability_type;
-use crate::driver::Driver;
-use crate::{Builder, Handler};
+use crate::{Builder, Driver, Handler};
 
 const USB_CLASS_VENDOR: u8 = 0xff;
 const USB_SUBCLASS_NONE: u8 = 0x00;

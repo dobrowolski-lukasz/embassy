@@ -10,9 +10,8 @@ use ssmarshal::serialize;
 use usbd_hid::descriptor::AsInputReport;
 
 use crate::control::{InResponse, OutResponse, Recipient, Request, RequestType};
-use crate::driver::{Driver, Endpoint, EndpointError, EndpointIn, EndpointOut};
 use crate::types::InterfaceNumber;
-use crate::{Builder, Handler};
+use crate::{Builder, Driver, Endpoint, EndpointError, EndpointIn, EndpointOut, Handler};
 
 const USB_CLASS_HID: u8 = 0x03;
 const USB_SUBCLASS_NONE: u8 = 0x00;

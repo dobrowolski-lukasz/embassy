@@ -10,9 +10,8 @@ use embassy_sync::blocking_mutex::CriticalSectionMutex;
 use embassy_sync::waitqueue::WakerRegistration;
 
 use crate::control::{self, InResponse, OutResponse, Recipient, Request, RequestType};
-use crate::driver::{Driver, Endpoint, EndpointError, EndpointIn, EndpointOut};
 use crate::types::InterfaceNumber;
-use crate::{Builder, Handler};
+use crate::{Builder, Driver, Endpoint, EndpointError, EndpointIn, EndpointOut, Handler};
 
 /// This should be used as `device_class` when building the `UsbDevice`.
 pub const USB_CLASS_CDC: u8 = 0x02;

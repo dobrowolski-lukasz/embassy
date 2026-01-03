@@ -7,8 +7,7 @@ use embassy_nrf::usb::vbus_detect::HardwareVbusDetect;
 use embassy_nrf::usb::Driver;
 use embassy_nrf::{bind_interrupts, pac, peripherals, usb};
 use embassy_usb::class::cdc_acm::{CdcAcmClass, State};
-use embassy_usb::driver::EndpointError;
-use embassy_usb::{Builder, Config, UsbDevice};
+use embassy_usb::{Builder, Config, EndpointError, UsbDevice};
 use static_cell::StaticCell;
 use {defmt_rtt as _, panic_probe as _};
 

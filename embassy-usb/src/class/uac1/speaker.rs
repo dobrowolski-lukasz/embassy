@@ -25,9 +25,8 @@ use super::terminal_type::TerminalType;
 use super::{Channel, ChannelConfig, FeedbackRefresh, SampleWidth, MAX_AUDIO_CHANNEL_COUNT, MAX_AUDIO_CHANNEL_INDEX};
 use crate::control::{self, InResponse, OutResponse, Recipient, Request, RequestType};
 use crate::descriptor::{SynchronizationType, UsageType};
-use crate::driver::{Driver, Endpoint, EndpointError, EndpointIn, EndpointOut, EndpointType};
 use crate::types::InterfaceNumber;
-use crate::{Builder, Handler};
+use crate::{Builder, Driver, Endpoint, EndpointError, EndpointIn, EndpointOut, EndpointType, Handler};
 
 /// Maximum allowed sampling rate (3 bytes) in Hz.
 const MAX_SAMPLE_RATE_HZ: u32 = 0x7FFFFF;

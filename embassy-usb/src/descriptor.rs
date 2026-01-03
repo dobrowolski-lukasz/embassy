@@ -2,9 +2,8 @@
 use embassy_usb_driver::EndpointType;
 
 use crate::builder::Config;
-use crate::driver::EndpointInfo;
 use crate::types::{InterfaceNumber, StringIndex};
-use crate::CONFIGURATION_VALUE;
+use crate::{EndpointInfo, CONFIGURATION_VALUE};
 
 /// Standard descriptor types
 #[allow(missing_docs)]

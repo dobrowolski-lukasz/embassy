@@ -12,8 +12,7 @@ use embassy_rp::peripherals::USB;
 use embassy_rp::usb::{Driver, Instance, InterruptHandler};
 use embassy_rp::{bind_interrupts, PeripheralType};
 use embassy_usb::class::midi::MidiClass;
-use embassy_usb::driver::EndpointError;
-use embassy_usb::{Builder, Config};
+use embassy_usb::{Builder, Config, EndpointError};
 use {defmt_rtt as _, panic_probe as _};
 
 bind_interrupts!(struct Irqs {

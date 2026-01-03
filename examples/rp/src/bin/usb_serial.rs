@@ -11,8 +11,7 @@ use embassy_rp::peripherals::USB;
 use embassy_rp::usb::{Driver, Instance, InterruptHandler};
 use embassy_rp::{bind_interrupts, PeripheralType};
 use embassy_usb::class::cdc_acm::{CdcAcmClass, State};
-use embassy_usb::driver::EndpointError;
-use embassy_usb::UsbDevice;
+use embassy_usb::{EndpointError, UsbDevice};
 use static_cell::StaticCell;
 use {defmt_rtt as _, panic_probe as _};
 

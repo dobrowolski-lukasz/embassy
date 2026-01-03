@@ -8,12 +8,13 @@
 use core::num::NonZeroU8;
 
 use embassy_time::Timer;
-use embassy_usb_driver::host::channel::{Control, InOut};
-use embassy_usb_driver::host::{channel, ChannelError, HostError, RequestType, SetupPacket, UsbChannel, UsbHostDriver};
-use embassy_usb_driver::{EndpointInfo, EndpointType, Speed};
+pub use embassy_usb_driver::host::{
+    channel, ChannelError, DeviceEvent, HostError, RequestType, SetupPacket, UsbChannel, UsbHostDriver,
+};
 
 use crate::control::Request;
 use crate::handlers::EnumerationInfo;
+use crate::{EndpointInfo, EndpointType, Speed};
 
 pub mod descriptor;
 
@@ -304,7 +305,7 @@ pub trait UsbHostBusExt: UsbHostDriver {
         speed: Speed,
         new_device_address: u8,
     ) -> Result<EnumerationInfo, HostError> {
-        let mut channel = self.alloc_channel::<Control, InOut>(
+        let mut channel = self.alloc_channel::<channel::Control, channel::InOut>(
             0,
             &EndpointInfo::new(0.into(), EndpointType::Control, speed.max_packet_size()),
             false,

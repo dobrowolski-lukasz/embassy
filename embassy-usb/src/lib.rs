@@ -9,7 +9,10 @@ extern crate std;
 // This mod MUST go first, so that the others see its macros.
 pub(crate) mod fmt;
 
-pub use embassy_usb_driver as driver;
+pub use embassy_usb_driver::{
+    Bus, ControlPipe, Direction, Driver, Endpoint, EndpointAddress, EndpointError, EndpointIn, EndpointInfo,
+    EndpointOut, EndpointType, Event, Speed, Unsupported,
+};
 
 mod builder;
 pub mod class;
@@ -34,7 +37,6 @@ pub use crate::builder::{Builder, Config, FunctionBuilder, InterfaceAltBuilder, 
 use crate::config::{MAX_HANDLER_COUNT, MAX_INTERFACE_COUNT};
 use crate::control::{InResponse, OutResponse, Recipient, Request, RequestType};
 use crate::descriptor::{descriptor_type, lang_id};
-use crate::driver::{Bus, ControlPipe, Direction, Driver, EndpointAddress, Event};
 use crate::types::{InterfaceNumber, StringIndex};
 
 /// The global state of the USB device.
@@ -70,8 +72,8 @@ pub enum RemoteWakeupError {
     Unsupported,
 }
 
-impl From<driver::Unsupported> for RemoteWakeupError {
-    fn from(_: driver::Unsupported) -> Self {
+impl From<Unsupported> for RemoteWakeupError {
+    fn from(_: Unsupported) -> Self {
         RemoteWakeupError::Unsupported
     }
 }

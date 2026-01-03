@@ -8,8 +8,7 @@ use embassy_nrf::usb::vbus_detect::{HardwareVbusDetect, VbusDetect};
 use embassy_nrf::usb::{Driver, Instance};
 use embassy_nrf::{bind_interrupts, pac, peripherals, usb};
 use embassy_usb::class::cdc_acm::{CdcAcmClass, State};
-use embassy_usb::driver::EndpointError;
-use embassy_usb::{Builder, Config};
+use embassy_usb::{Builder, Config, EndpointError};
 use {defmt_rtt as _, panic_probe as _};
 
 bind_interrupts!(struct Irqs {

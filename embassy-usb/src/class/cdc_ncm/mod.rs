@@ -18,9 +18,8 @@ use core::mem::{size_of, MaybeUninit};
 use core::ptr::{addr_of, copy_nonoverlapping};
 
 use crate::control::{self, InResponse, OutResponse, Recipient, Request, RequestType};
-use crate::driver::{Driver, Endpoint, EndpointError, EndpointIn, EndpointOut};
 use crate::types::{InterfaceNumber, StringIndex};
-use crate::{Builder, Handler};
+use crate::{Builder, Driver, Endpoint, EndpointError, EndpointIn, EndpointOut, Handler};
 
 pub mod embassy_net;
 

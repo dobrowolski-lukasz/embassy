@@ -1,7 +1,7 @@
 //! USB control data types.
 use core::mem;
 
-use crate::driver::Direction;
+use crate::Direction;
 
 /// Control request type.
 #[repr(u8)]

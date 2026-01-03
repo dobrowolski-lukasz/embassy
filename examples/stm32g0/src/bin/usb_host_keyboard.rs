@@ -11,9 +11,8 @@ use embassy_stm32::{bind_interrupts, pac, peripherals, usb, Config};
 use embassy_time::Timer;
 use embassy_usb::handlers::kbd::KbdHandler;
 use embassy_usb::handlers::UsbHostHandler;
-use embassy_usb::host::UsbHostBusExt;
-use embassy_usb_driver::host::DeviceEvent::Connected;
-use embassy_usb_driver::host::UsbHostDriver;
+use embassy_usb::host::DeviceEvent::Connected;
+use embassy_usb::host::{UsbHostBusExt, UsbHostDriver};
 use {defmt_rtt as _, panic_probe as _};
 
 pub use crate::pac::rcc::vals::Mcosel;

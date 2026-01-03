@@ -20,8 +20,7 @@ use embassy_rp::{bind_interrupts, pio, PeripheralType};
 use embassy_sync::blocking_mutex::raw::NoopRawMutex;
 use embassy_sync::pipe::Pipe;
 use embassy_usb::class::cdc_acm::{CdcAcmClass, Receiver, Sender, State};
-use embassy_usb::driver::EndpointError;
-use embassy_usb::{Builder, Config};
+use embassy_usb::{Builder, Config, EndpointError};
 use embedded_io_async::{Read, Write};
 use {defmt_rtt as _, panic_probe as _};
 
