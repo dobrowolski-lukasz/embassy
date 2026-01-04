@@ -770,6 +770,8 @@ impl<'d, T: Instance> UsbHostDriver for Driver<'d, T> {
 
             Ok(Channel::new(free_index as _, addr, 64, endpoint, dev_addr, pre))
         } else {
+            //TODO: Ensure this is correct.
+            //let index = self.channel_index.fetch_add(1, Ordering::Relaxed);
             let index = critical_section::with(|_| {
                 let old_val = self.channel_index.load(Ordering::Relaxed);
                 self.channel_index.store(old_val + 1, Ordering::Relaxed);
